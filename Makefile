@@ -3,14 +3,14 @@ CFLAGS=-c -g -O0 -Wall -std=c++14
 
 all: cppds
 
-cppds: clean list master
-	$(CC) list.o master.o -o cppds
+cppds: clean node master
+	$(CC) ./build/*.o  -o ./build/cppds
 
 master:
-	$(CC) $(CFLAGS) master.cpp
+	$(CC) $(CFLAGS) master.cpp -o ./build/master.o
 
-list:
-	$(CC) $(CFLAGS) ./lib/list.cpp
+node:
+	$(CC) $(CFLAGS) ./lib/node.cpp -o ./build/node.o
 
 clean:
-	rm -rf *.o cppds
+	rm -f ./build/*

@@ -1,11 +1,9 @@
 #include <iostream>
-#include "./lib/list.h"
+#include "./lib/node.h"
 
 int main(){
-  std::cout << "hello" << std::endl;
-  Chyld::Node<int> n;
-  std::cout << n.data << std::endl;
-  std::cout << n.next << std::endl;
-  //std::cout << n.next << std::endl;
+  auto n = new Chyld::Node<int>(3);
+  std::cout << n->data << std::endl;
+  delete n;
   return 0;
 }

@@ -1,13 +1,17 @@
 #include <iostream>
 
+#ifndef CHYLD_NODE_H
+#define CHYLD_NODE_H
+
 namespace Chyld{
-  template<class T>
+  template<typename T>
   class Node{
   private:
     Node* prev;
-  public:
     Node* next;
+  public:
     T data;
+  public:
     Node();
     Node(T val);
     ~Node();
@@ -20,14 +24,17 @@ namespace Chyld{
 
 template<class T>
 Chyld::Node<T>::Node(){
-  std::cout << "Node Default Constructor" << std::endl;
+  this->prev = NULL;
+  this->next = NULL;
 }
 
 template<class T>
-Chyld::Node<T>::Node(T val){
-  this->data = val;
+Chyld::Node<T>::Node(T data) : Node(){
+  this->data = data;
 }
 
 template<class T>
 Chyld::Node<T>::~Node(){
 }
+
+#endif
