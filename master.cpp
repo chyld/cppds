@@ -1,9 +1,11 @@
 #include <iostream>
-#include "./lib/node.h"
+#include "./lib/ll.h"
 
 int main(){
-  auto n = new Chyld::Node<int>(3);
-  std::cout << n->data << std::endl;
-  delete n;
+  auto l = new Chyld::LL<int>();
+  l->addFront(3);
+  std::cout << l << std::endl;
+  l->addFront(5);
+  std::cout << l << std::endl;
   return 0;
 }

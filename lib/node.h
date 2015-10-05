@@ -16,25 +16,21 @@ namespace Chyld{
     Node(T val);
     ~Node();
   };
-}
 
-// -------------------------------------------------------------------------- //
-// -------------------------------------------------------------------------- //
-// -------------------------------------------------------------------------- //
+  template<typename T>
+  Node<T>::Node(){
+    prev = NULL;
+    next = NULL;
+  }
 
-template<class T>
-Chyld::Node<T>::Node(){
-  this->prev = NULL;
-  this->next = NULL;
-}
+  template<typename T>
+  Node<T>::Node(T data) : Node(){
+    this->data = data;
+  }
 
-template<class T>
-Chyld::Node<T>::Node(T data) : Node(){
-  this->data = data;
-}
-
-template<class T>
-Chyld::Node<T>::~Node(){
+  template<typename T>
+  Node<T>::~Node(){
+  }
 }
 
 #endif
